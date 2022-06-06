@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">filmograf</string>
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
+    <string name="twMovieTitle">TextView</string>
+    <string name="movietitle">MovieTitle</string>
+    <string name="twmovietitle">twmovieTitle</string>
+    <string name="sa">sa</string>
+    <string name="baslik">baslik</string>
+    <string name="t_r">tür</string>
+    <string name="puan">puan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Home Screen Texts -->
+    <string name="movies_tab_text">Filmler</string>
+    <string name="show_tab_text">Diziler</string>
+
+    <!-- Movie Screen Texts -->
+
+
+    <!-- Series Screen Texts -->
+
+
+</resources>
