@@ -15,6 +15,7 @@
     <!-- Home Screen Texts -->
     <string name="movies_tab_text">Filmler</string>
     <string name="show_tab_text">Diziler</string>
+    <string name="action_film">Action Film</string>
 
     <!-- Movie Screen Texts -->
 
