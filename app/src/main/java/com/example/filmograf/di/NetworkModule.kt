@@ -1,6 +1,6 @@
     package com.example.filmograf.di
 
-    import com.example.filmograf.network.MovieService
+    import com.example.filmograf.network.MovieData
     import org.koin.dsl.module
     import retrofit2.Retrofit
     import retrofit2.converter.gson.GsonConverterFactory
@@ -15,7 +15,7 @@
 
    }
         single {
-            get<Retrofit>().create(MovieService::class.java)
+            get<Retrofit>().create(MovieData::class.java)
         }
 
     }
