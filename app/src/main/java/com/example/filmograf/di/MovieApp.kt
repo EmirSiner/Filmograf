@@ -5,15 +5,15 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
 
-class MovieApp: Application() {
+class MovieApp : Application() {
     override fun onCreate() {
         super.onCreate()
         // Start Koin
-        startKoin{
+        startKoin {
             androidLogger()
             androidContext(this@MovieApp)
-            modules(networkModule)
-    }
+            modules(networkModule, viewModelModule)
+        }
 
-}
+    }
 }

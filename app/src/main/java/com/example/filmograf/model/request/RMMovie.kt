@@ -4,18 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.filmograf.network.MovieData
-import com.example.filmograf.network.MovieDataResponse
-import com.example.filmograf.network.MovieGet
+import com.example.filmograf.model.response.MovieResult
+import com.example.filmograf.network.MovieService
 import kotlinx.coroutines.launch
 
-class RMMovie(val movieGet: MovieGet):ViewModel() {
-    private val _movieLiveDataLiveData = MutableLiveData<List<MovieData>>()
-    val characterLiveData : MutableLiveData<List<MovieData>> = _movieLiveDataLiveData
+class RMMovie(private val movieService: MovieService) : ViewModel() {
+    private val _movieLiveDataLiveData = MutableLiveData<List<MovieResult>>()
+    val movieLiveData: LiveData<List<MovieResult>> = _movieLiveDataLiveData
 
     init {
         viewModelScope.launch {
-            val movieData =  movieGet.fetchCharacters()
+            val movieData = movieService.fetchCharacters("217de4d3febec492285dbe5fada73b5d")
             _movieLiveDataLiveData.value = movieData.results
         }
     }

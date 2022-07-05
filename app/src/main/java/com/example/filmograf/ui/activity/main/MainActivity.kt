@@ -1,31 +1,32 @@
 package com.example.filmograf.ui.activity.main
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.filmograf.R
-import com.example.filmograf.network.MovieGet
+import com.example.filmograf.model.request.RMMovie
+import com.example.filmograf.model.request.RmItemAdapter
+import com.example.filmograf.model.request.RmItemListener
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
-    lateinit var vPager:ViewPager2
-    lateinit var category:TabLayout
+class MainActivity : AppCompatActivity() ,RmItemListener{
+    lateinit var vPager: ViewPager2
+    lateinit var category: TabLayout
 
-    val movieViewModel: MovieGet by viewModel()
+    private val movieViewModel: RMMovie by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        vPager=findViewById(R.id.viewPager)
-        category=findViewById(R.id.tlMovieCategory)
+        vPager = findViewById(R.id.viewPager)
+        category = findViewById(R.id.tlMovieCategory)
         createViewPager()
-        vPager.adapter = ViewPagerAdapter(this)
-        TabLayoutMediator(category,vPager){ tab, index ->
+        vPager.adapter =RmItemAdapter(this)
+        TabLayoutMediator(category, vPager) { tab, index ->
 
         }.attach()
         createTab()
@@ -35,22 +36,35 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun createViewPager(){
+    fun createViewPager() {
+        movieViewModel.movieLiveData.observe(this) { movieResultList ->
+            (vPager.adapter as RmItemAdapter).submitList(movieResultList)
 
+        }
     }
 
-    internal class ViewPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
+    override fun onItemClicked(itemId: Int) {
+        val detailIntent = Intent()
+        detailIntent.putExtra("movieId", itemId)
+        startActivity(detailIntent)
+        // TODO: Detay ekranında böyle okuma yapılacak
+        //intent.extras?.getInt("movieId")
+    }
+}
+
+
+   /* internal class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
+        FragmentStateAdapter(fragmentActivity) {
 
         private val fragmentList = mutableListOf<Fragment>()
 
         override fun getItemCount(): Int = fragmentList.size
 
         override fun createFragment(position: Int): Fragment {
-           return  fragmentList[position]
+            return fragmentList[position]
         }
 
         fun addNewFragment() {
 
         }
-    }
-}
+  }   */
