@@ -17,6 +17,10 @@
     <string name="show_tab_text">Diziler</string>
     <string name="action_film">Action Film</string>
     <string name="slide_1">Slide 1</string>
+    <string name="detail">Detail</string>
+    <string name="tw1">TextView</string>
+    <string name="iw1">TODO</string>
+    <string name="filmograf">string</string>
 
     <!-- Movie Screen Texts -->
 

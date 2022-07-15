@@ -1,4 +1,4 @@
-package com.example.filmograf.model.request
+package com.example.filmograf.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

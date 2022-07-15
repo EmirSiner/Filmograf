@@ -1,7 +1,8 @@
 package com.example.filmograf.di
 
-import com.example.filmograf.model.request.RMMovie
+import com.example.filmograf.viewmodel.RMMovie
 import com.example.filmograf.network.MovieService
+import com.example.filmograf.viewmodel.MovieDetailVM
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -26,5 +27,6 @@ val networkModule = module {
 val viewModelModule = module {
 
     viewModel { RMMovie(get()) }
+    viewModel { MovieDetailVM(get()) }
 }
 

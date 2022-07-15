@@ -19,13 +19,17 @@ open class RmItemHolder private constructor(holderView: View) : RecyclerView.Vie
             return RmItemHolder(holderView)
         }
     }
-    fun bind(movieResult: MovieResult,  rmItemListener: RmItemListener) {
-        val rmtwname = itemView.findViewById<TextView>(R.id.rmItemName)
-        val rmImgView = itemView.findViewById<ImageView>(R.id.rmImageView)
-        rmtwname.text = movieResult.name
-        Glide.with(rmImgView).load(movieResult.imageUrl).into(rmImgView)
+    fun bind(
+        movieResult: MovieResult,
+        ffItemListener: RmItemListener
+    ) {
+        val fftwname = itemView.findViewById<TextView>(R.id.rmItemName)
+        val ffImgView = itemView.findViewById<ImageView>(R.id.rmImageView)
+        fftwname.text = movieResult.name
+        Glide.with(ffImgView).load(movieResult.imageUrl).into(ffImgView)
         itemView.setOnClickListener {
-            rmItemListener.onItemClicked(
+            ffItemListener.onItemClicked(
+
                 movieResult.id
             )
         }

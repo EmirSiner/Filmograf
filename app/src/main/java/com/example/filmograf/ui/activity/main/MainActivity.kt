@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.filmograf.R
-import com.example.filmograf.model.request.RMMovie
+import com.example.filmograf.viewmodel.RMMovie
 import com.example.filmograf.model.request.RmItemAdapter
 import com.example.filmograf.model.request.RmItemListener
 import com.google.android.material.tabs.TabLayout
@@ -21,13 +21,12 @@ class MainActivity : AppCompatActivity() ,RmItemListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         vPager = findViewById(R.id.viewPager)
         category = findViewById(R.id.tlMovieCategory)
         createViewPager()
         vPager.adapter =RmItemAdapter(this)
         TabLayoutMediator(category, vPager) { tab, index ->
-
+            vPager.currentItem=index
         }.attach()
         createTab()
     }
@@ -43,28 +42,32 @@ class MainActivity : AppCompatActivity() ,RmItemListener{
         }
     }
 
-    override fun onItemClicked(itemId: Int) {
-        val detailIntent = Intent()
-        detailIntent.putExtra("movieId", itemId)
-        startActivity(detailIntent)
-        // TODO: Detay ekranında böyle okuma yapılacak
-        //intent.extras?.getInt("movieId")
-    }
+
+
+ override fun onItemClicked(itemId: Int) {
+     val detailIntent = Intent(this,DetailScreenActivity::class.java)
+     detailIntent.putExtra("movie_id",itemId)
+     startActivity(detailIntent)
+
+
+
+
+ }
 }
 
 
-   /* internal class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
-        FragmentStateAdapter(fragmentActivity) {
+/* internal class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
+     FragmentStateAdapter(fragmentActivity) {
 
-        private val fragmentList = mutableListOf<Fragment>()
+     private val fragmentList = mutableListOf<Fragment>()
 
-        override fun getItemCount(): Int = fragmentList.size
+     override fun getItemCount(): Int = fragmentList.size
 
-        override fun createFragment(position: Int): Fragment {
-            return fragmentList[position]
-        }
+     override fun createFragment(position: Int): Fragment {
+         return fragmentList[position]
+     }
 
-        fun addNewFragment() {
+     fun addNewFragment() {
 
-        }
-  }   */
+     }
+}   */
