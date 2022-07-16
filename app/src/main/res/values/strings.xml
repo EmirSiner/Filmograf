@@ -21,6 +21,8 @@
     <string name="tw1">TextView</string>
     <string name="iw1">TODO</string>
     <string name="filmograf">string</string>
+    <string name="tagline">Tagline</string>
+    <string name="movie_detail">Movie Detail</string>
 
     <!-- Movie Screen Texts -->
 

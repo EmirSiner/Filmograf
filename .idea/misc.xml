@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/activity_detail_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/activity_detail_screen.xml" value="0.176" />
         <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/activity_main.xml" value="0.2269021739130435" />
         <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/activity_movie_page.xml" value="0.11203703703703703" />
         <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/custom_tab.xml" value="0.2269021739130435" />
@@ -13,6 +15,7 @@
         <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/fragment_series.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/item_viewpage_layout.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/layout/moviesearch.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/emirh/AndroidStudioProjects/filmograf/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
